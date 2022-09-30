@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS semesters CASCADE;
+CREATE TABLE semesters (
+  id SERIAL PRIMARY KEY,
+  class_id INTEGER REFERENCES classes(id) ON DELETE CASCADE
+);

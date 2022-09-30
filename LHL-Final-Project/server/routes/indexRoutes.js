@@ -1,9 +1,11 @@
 const router = require('express').Router();
+const users = require('../db/queries/users');
 
 router.get('/', (req, res) => {
-  const cats = ['Rosey', 'Puma', 'Mr Buttons', 'Aya'];
-  res.json(cats);
+  users.getAllUsers().then(data => {
+    console.log(data);
+    res.json({users: data});
+  })
 });
   
-
 module.exports = router;
