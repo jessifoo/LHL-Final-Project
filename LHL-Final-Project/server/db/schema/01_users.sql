@@ -5,8 +5,6 @@ CREATE TABLE users (
   lastName VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phoneNumber integer,
+  phoneNumber BIGINT,
   profilePic VARCHAR(255)
-  note_id INTEGER REFERENCES notes(id) ON DELETE CASCADE,
-
 );
