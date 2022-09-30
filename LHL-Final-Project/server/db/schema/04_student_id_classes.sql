@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS classes CASCADE;
+CREATE TABLE student_id_class (
+  student_id INTEGER REFERENCES student(id) ON DELETE CASCADE,
+  class_id INTEGER REFERENCES class(id) ON DELETE CASCADE,
+);
