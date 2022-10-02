@@ -1,8 +1,10 @@
 import './App.css';
+import Name from "./components/User";
 
 function App() {
+
   return (
-    <h1>Hello World :)</h1>
+    <User />
   );
 }
 
