@@ -3,6 +3,7 @@
 
 const router = require('express').Router();
 const users = require('../db/queries/users');
+const notes = require('../db/queries/notes');
 
 router.get('/users', (req, res) => {
   users.getAllUsers().then(data => {
@@ -11,7 +12,19 @@ router.get('/users', (req, res) => {
   })
 });
 
-router.get('/register')
+router.get('/notes', (req, res) => {
+  notes.getAllNotes().then(data => {
+    console.log(data);
+    res.json({notes: data});
+  })
+});
+
+router.get('/notes/:id', (req, res) => {
+  notes.getNotesForUser(req.params).then(data => {
+    console.log(data);
+    res.json({userNotes: data});
+  })
+});
 
 
   

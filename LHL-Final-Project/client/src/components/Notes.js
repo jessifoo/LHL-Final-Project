@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function Notes(props) {
+  const [noteData, setNoteData] = useState(undefined)
+
+
+  useEffect(() => {
+    fetch("/notes").then(
+      res => res.json())
+      .then(data => setNoteData(data))
+  }, [])
+    
+  
+      console.log("NOTE DATA: ", noteData)
   return (
     <div>
-      <h4>FirstName, LastName</h4>
-      <h3>Email: superkookemail@email.com</h3>
-      <h3>Cell: 555-555-5555</h3>
+      {noteData ? ( 
+      <div>
+        <p>{noteData.notes[0].title}</p> 
+        <p>{noteData.notes[0].body} </p> 
+      </div>
+        
+        ) : (
+          
+          <p>Loading...</p>
+      )}
+  
     </div>
+
   );
 }

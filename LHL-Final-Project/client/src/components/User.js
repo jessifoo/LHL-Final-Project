@@ -10,17 +10,8 @@ export default function User(props) {
       res => res.json())
       .then(data => setBackendData(data))
   }, [])
-  // <main>
-  //   <div>
-  //     <img src="https://t3.ftcdn.net/jpg/02/85/21/08/360_F_285210898_TBIeGXpLm3sW1uh95wiZtpO9RH4d7bAR.jpg" alt= "Profile Pic"/>
-  //     <h4>name: {backendData.users[0].firstname}</h4>
-  //   </div>
-  // </main>
-  console.log("BACKEND DATA: ", backendData)
 
- /* const userArray = users.map (user => {
-    return <key={user.id} 
-  })*/
+
   return (
     <div>
   
