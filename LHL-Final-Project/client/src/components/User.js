@@ -10,25 +10,34 @@ export default function User(props) {
       res => res.json())
       .then(data => setBackendData(data))
   }, [])
-    // <div>
+  // <main>
+  //   <div>
+  //     <img src="https://t3.ftcdn.net/jpg/02/85/21/08/360_F_285210898_TBIeGXpLm3sW1uh95wiZtpO9RH4d7bAR.jpg" alt= "Profile Pic"/>
+  //     <h4>name: {backendData.users[0].firstname}</h4>
+  //   </div>
+  // </main>
+  console.log("BACKEND DATA: ", backendData)
 
-    //   {backendData ? ( backendData.users.map((user, i) => (
-    //       <p key={i}>{user.firstname}</p>
-    //     ))
-    //     ) : (
-          
-    //       <p>Loading...</p>
-    //   )}
-
-    // </div>
-
+ /* const userArray = users.map (user => {
+    return <key={user.id} 
+  })*/
   return (
-
-    <main>
+    <div>
+  
+      {backendData ? ( 
       <div>
-        <img src="https://t3.ftcdn.net/jpg/02/85/21/08/360_F_285210898_TBIeGXpLm3sW1uh95wiZtpO9RH4d7bAR.jpg" alt= "Profile Pic"/>
+        <img src={backendData.users[0].profilepic} alt= "Profile Pic"/>
+        <p>{backendData.users[0].firstname} {backendData.users[0].lastname}</p> 
+        <p>{backendData.users[0].phonenumber} </p> 
+        <p>{backendData.users[0].email} </p> 
       </div>
-      <h4></h4>
-    </main>
+        
+        ) : (
+          
+          <p>Loading...</p>
+      )}
+  
+    </div>
+
   );
 }
