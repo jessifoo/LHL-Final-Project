@@ -7,17 +7,23 @@ const bodyParser = require('body-parser');
 // routes import
 const indexRoutes = require('./routes/indexRoutes');
 
+
 const app = express();
 
 
 // middleware setup
 app.use(morgan(ENVIROMENT));
 app.use(bodyParser.json());
+const cors = require('cors') ;app.use(cors())
 
-app.use('/index', indexRoutes)
+
+app.use('/', indexRoutes)
+
 
 app.get('/', (req, res) => {
 	res.json({greetings: 'hello world'});
-})
+});
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
+
+module.exports = app;
