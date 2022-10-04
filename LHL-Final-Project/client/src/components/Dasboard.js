@@ -1,11 +1,8 @@
-import './App.css';
 import React from 'react';
 import User from "./components/User";
 import Notes from "./components/Notes";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-function App() {
+function Dashboard() {
 
   return (
     <div>
@@ -16,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default Dashboard;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Card from 'react-bootstrap/Card';
 
 
 export default function User(props) {
@@ -15,14 +16,18 @@ export default function User(props) {
 
   return (
     <div>
-  
+
       {backendData ? ( backendData.userData.map((user) => (
-      <div>
-        <img src={user.profilepic} alt= "Profile Pic"/>
-        <p>{user.firstname} {user.lastname}</p> 
-        <p>{user.phonenumber} </p> 
-        <p>{user.email} </p> 
-      </div>
+      <Card key={user.id} style={{ width: '20%'}}>
+        <Card.Img variant="top" src={user.profilepic} alt= "Profile Pic"/>
+        <Card.Body>
+        <Card.Title>{user.firstname} {user.lastname}</Card.Title> 
+        <Card.Text>
+          {user.phonenumber} 
+          {user.email} 
+        </Card.Text> 
+        </Card.Body>
+      </Card>
         ))
         ) : (
           

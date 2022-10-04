@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 export default function Notes(props) {
   const [noteData, setNoteData] = useState(undefined)
@@ -27,11 +29,13 @@ export default function Notes(props) {
   return (
     <div>
       {noteData ? (noteData.userNotes.map((note, i) => (
-        <div key={i}>
-          <p>{note.title}</p>
-          <p>{note.body} </p>
-          <p>{note.body} </p>
-        </div>
+        <Card key={i} style={{ width: '40%'}}>
+          <Card.Body>
+          <Card.Title>{note.title}</Card.Title>
+          <Button variant="outline-primary">Edit</Button>{' '}
+          <Button variant="outline-danger">Delete</Button>{' '}
+          </Card.Body>
+        </Card>
       ))
       ) : (
         <p>Loading...</p>
