@@ -7,21 +7,25 @@ const notes = require('../db/queries/notes');
 
 router.get('/users', (req, res) => {
   users.getAllUsers().then(data => {
-    console.log(data);
     res.json({users: data});
   })
 });
 
+router.get('/users/:id', (req, res) => {
+  users.getUserById(req.params.id).then(data => {
+    res.json({userData: data});
+  })
+});
+
+
 router.get('/notes', (req, res) => {
   notes.getAllNotes().then(data => {
-    console.log(data);
     res.json({notes: data});
   })
 });
 
 router.get('/notes/:id', (req, res) => {
-  notes.getNotesForUser(req.params).then(data => {
-    console.log(data);
+  notes.getNotesForUser(req.params.id).then(data => {
     res.json({userNotes: data});
   })
 });

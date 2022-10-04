@@ -8,7 +8,7 @@ const getAllNotes = () => {
 }
 
 const getNotesForUser = id => {
-	return db.query("SELECT * FROM notes; WHERE user_id = $1", [id]).then(data => {
+	return db.query("SELECT * FROM notes WHERE user_id = $1;", [id]).then(data => {
 		return data.rows;
 	})
 }
