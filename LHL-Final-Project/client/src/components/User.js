@@ -4,31 +4,32 @@ import React, { useEffect, useState } from 'react';
 export default function User(props) {
   
   const [backendData, setBackendData] = useState(undefined)
-
+ const id = 3;
   useEffect(() => {
-    fetch("/users").then(
+    fetch(`/users/${id}`).then(
       res => res.json())
       .then(data => setBackendData(data))
   }, [])
-    // <div>
 
-    //   {backendData ? ( backendData.users.map((user, i) => (
-    //       <p key={i}>{user.firstname}</p>
-    //     ))
-    //     ) : (
-          
-    //       <p>Loading...</p>
-    //   )}
 
-    // </div>
 
   return (
-
-    <main>
+    <div>
+  
+      {backendData ? ( backendData.userData.map((user) => (
       <div>
-        <img src="https://t3.ftcdn.net/jpg/02/85/21/08/360_F_285210898_TBIeGXpLm3sW1uh95wiZtpO9RH4d7bAR.jpg" alt= "Profile Pic"/>
+        <img src={user.profilepic} alt= "Profile Pic"/>
+        <p>{user.firstname} {user.lastname}</p> 
+        <p>{user.phonenumber} </p> 
+        <p>{user.email} </p> 
       </div>
-      <h4></h4>
-    </main>
+        ))
+        ) : (
+          
+          <p>Loading...</p>
+      )}
+  
+    </div>
+
   );
 }
