@@ -4,6 +4,7 @@
 const router = require('express').Router();
 const users = require('../db/queries/users');
 const notes = require('../db/queries/notes');
+const ratings = require('../db/queries/ratings')
 
 router.get('/users', (req, res) => {
   users.getAllUsers().then(data => {
@@ -30,6 +31,11 @@ router.get('/notes/:id', (req, res) => {
   })
 });
 
+router.get('/ratings/:id', (req, res) => {
+  ratings.getRatingsForNote(req.params.id).then(data => {
+    res.json({noteRating: data});
+  })
+});
 
   
 module.exports = router;
