@@ -9,9 +9,9 @@ export default function Notes(props) {
   const [ratingData, setRatingData] = useState(undefined)
 
   //hard-coded for now
-  const id = 3;
+  // const id = 3;
   useEffect(() => {
-    fetch(`/notes/${id}`).then(
+    fetch(`/notes`).then(
       res => res.json())
       .then(data => setNoteData(data))
   }, [])
@@ -28,15 +28,18 @@ export default function Notes(props) {
 
   return (
     <div>
-      {noteData ? (noteData.userNotes.map((note, i) => (
-        <Card key={i} style={{ width: '40%'}}>
-          <Card.Body>
-          <Card.Title>{note.title}</Card.Title>
-          <Button variant="outline-primary">Edit</Button>{' '}
-          <Button variant="outline-danger">Delete</Button>{' '}
-          </Card.Body>
-        </Card>
-      ))
+      {noteData ? (noteData.notes.map((note, i) => (
+      
+
+          <Card key={i} style={{ width: '80rem'}}>
+            <Card.Body>
+            <Card.Title>{note.title}</Card.Title>
+            <Button variant="outline-primary">Edit</Button>{' '}
+            <Button variant="outline-danger">Delete</Button>{' '}
+            </Card.Body>
+          </Card>
+        
+        ))
       ) : (
         <p>Loading...</p>
       )}
