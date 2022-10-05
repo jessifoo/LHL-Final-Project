@@ -19,7 +19,6 @@ export default function NavBar(props) {
       <Nav
         defaultActiveKey={activeLink}
         onSelect={(selectedKey, e) => {
-          e.preventDefault();
           setActiveLink(selectedKey);
         }}
       >
