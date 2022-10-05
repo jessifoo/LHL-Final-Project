@@ -1,8 +1,13 @@
+
+#root {
+  background: linear-gradient(#75c9b7bd, #abd699b3)
+}
+
 .bg-color{
-  background-color: rgb(108, 74, 74);
+  background-color: #16123fe8;
 }
 .content{
-  margin-top: 100px;
+  margin-top: 46px;
   padding: 12px;
   height: 3000px;
 }
@@ -11,3 +16,25 @@
   justify-content: space-between;
   justify-content: right;
 }
+
+.text-right {
+  display:flex;
+  justify-content: right;
+  gap: 20px;
+  box-sizing: content-box;
+ 
+}
+
+.container-fluid {
+  margin-left:auto;
+  margin-top: 5%;
+}
+
+.card-body {
+  background-color: #eeecd5a6;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+}
+

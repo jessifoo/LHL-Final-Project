@@ -16,12 +16,10 @@ function App() {
       <div className='content'>
         <Routes>
         {/* change to <Dashboard/> */}
-          <Route path="/user" element={<User/>} /> 
-          <Route path="/note" element={<Notes/>} /> 
-          <Route path="/add" element={<AddNote/>} /> 
+          <Route path="/dashboard" element={<Dashboard/>} /> 
         </Routes>
       </div>
-      <Dashboard />
+    
     </div>
   
   );
