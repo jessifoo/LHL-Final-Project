@@ -18,12 +18,12 @@ export default function User(props) {
     <div>
 
       {backendData ? (backendData.userData.map((user) => (
-        <Card key={user.id} style={{ width: '45rem' }}>
+        <Card key={user.id} style={{ width: '35rem' }}>
           <Card.Img variant="top" src={user.profilepic} alt="Profile Pic" />
           <Card.Body>
-            <Card.Title>{user.firstname} {user.lastname}</Card.Title>
-            <Card.Text> {user.phonenumber}  </Card.Text>
-            <Card.Text>{user.email} </Card.Text>
+            <Card.Title className="text-center">{user.firstname} {user.lastname}</Card.Title>
+            <Card.Text className="text-center"> {user.phonenumber}  </Card.Text>
+            <Card.Text className="text-center">{user.email} </Card.Text>
           </Card.Body>
         </Card>
       ))

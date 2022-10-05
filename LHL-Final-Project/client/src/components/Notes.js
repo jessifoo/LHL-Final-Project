@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Notes.css'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
@@ -25,10 +26,11 @@ export default function Notes(props) {
 
           <Card key={i} style={{ width: '80rem' }}>
             <Card.Body>
-              <Card.Title>{note.title}</Card.Title>
-              <Button variant="outline-primary">Edit</Button>{' '}
-              <Button variant="outline-danger">Delete</Button>{' '}
-              <Button variant="outline-info">View</Button>{' '}
+              <Card.Title className="text-center">{note.title}</Card.Title>
+              <div  class=" text-right">
+                <button type="button" class="btn btn-outline-primary">Edit</button>
+                <button type="button" class="btn btn-outline-danger">Delete</button>
+              </div>
             </Card.Body>
           </Card>
 
