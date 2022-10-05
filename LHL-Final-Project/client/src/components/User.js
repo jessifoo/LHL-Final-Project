@@ -3,9 +3,9 @@ import Card from 'react-bootstrap/Card';
 
 
 export default function User(props) {
-  
+
   const [backendData, setBackendData] = useState(undefined)
- const id = 3;
+  const id = 3;
   useEffect(() => {
     fetch(`/users/${id}`).then(
       res => res.json())
@@ -17,22 +17,21 @@ export default function User(props) {
   return (
     <div>
 
-      {backendData ? ( backendData.userData.map((user) => (
-      <Card key={user.id} style={{ width: '45rem'}}>
-        <Card.Img variant="top" src={user.profilepic} alt= "Profile Pic"/>
-        <Card.Body>
-        <Card.Title>{user.firstname} {user.lastname}</Card.Title> 
-        <Card.Text>
-          {user.phonenumber}  {user.email} 
-        </Card.Text> 
-        </Card.Body>
-      </Card>
-        ))
-        ) : (
-          
-          <p>Loading...</p>
+      {backendData ? (backendData.userData.map((user) => (
+        <Card key={user.id} style={{ width: '45rem' }}>
+          <Card.Img variant="top" src={user.profilepic} alt="Profile Pic" />
+          <Card.Body>
+            <Card.Title>{user.firstname} {user.lastname}</Card.Title>
+            <Card.Text> {user.phonenumber}  </Card.Text>
+            <Card.Text>{user.email} </Card.Text>
+          </Card.Body>
+        </Card>
+      ))
+      ) : (
+
+        <p>Loading...</p>
       )}
-  
+
     </div>
 
   );

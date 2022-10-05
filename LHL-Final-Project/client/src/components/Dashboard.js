@@ -18,7 +18,6 @@ function Dashboard() {
         </Col>
       <Col>
         <Stack gap={3}>
-        <div className="bg-light border">First item</div>
           <Notes />
         </Stack>
       </Col>

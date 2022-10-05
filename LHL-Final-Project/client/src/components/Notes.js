@@ -16,30 +16,24 @@ export default function Notes(props) {
       .then(data => setNoteData(data))
   }, [])
 
-  /*useEffect(() => {
-    fetch(`/ratings/${id}`).then(
-      res => res.json())
-      .then(data => setRatingData(data))
-  }, [])*/
-
-  // if note_id === noteRating.note_id
-  //   then show the rating
-  //   else don't
 
   return (
     <div>
       {noteData ? (noteData.notes.map((note, i) => (
-      
 
-          <Card key={i} style={{ width: '80rem'}}>
+        <ul>
+
+          <Card key={i} style={{ width: '80rem' }}>
             <Card.Body>
-            <Card.Title>{note.title}</Card.Title>
-            <Button variant="outline-primary">Edit</Button>{' '}
-            <Button variant="outline-danger">Delete</Button>{' '}
+              <Card.Title>{note.title}</Card.Title>
+              <Button variant="outline-primary">Edit</Button>{' '}
+              <Button variant="outline-danger">Delete</Button>{' '}
+              <Button variant="outline-info">View</Button>{' '}
             </Card.Body>
           </Card>
-        
-        ))
+
+        </ul>
+      ))
       ) : (
         <p>Loading...</p>
       )}
