@@ -5,6 +5,8 @@ import Notes from "./components/Notes";
 import NavBar from './components/NavBar';
 import AddNote from './components/AddNote';
 import {Route, Routes} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Dashboard from './components/Dashboard';
 
 function App() {
 
@@ -19,7 +21,9 @@ function App() {
           <Route path="/add" element={<AddNote/>} /> 
         </Routes>
       </div>
+      <Dashboard />
     </div>
+  
   );
 }
 
