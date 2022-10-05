@@ -7,6 +7,7 @@ import AddNote from './components/AddNote';
 import {Route, Routes} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
+import Login from './components/Login';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
         {/* change to <Dashboard/> */}
           <Route path="/dashboard" element={<Dashboard/>} /> 
+          <Route path="/login" element={<Login/>} /> 
         </Routes>
       </div>
     

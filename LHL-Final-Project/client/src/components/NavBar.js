@@ -30,7 +30,7 @@ export default function NavBar(props) {
         <DropdownItem href=""> History</DropdownItem>
         <DropdownItem href=""> Programing</DropdownItem>
         </NavDropdown>
-        <Nav.Link> Logout</Nav.Link>
+        <Nav.Link href="/login" eventKey="login"> Login/Register</Nav.Link>
       </Nav>
       </Navbar.Collapse>
     </Navbar>
