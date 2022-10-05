@@ -1,1 +1,13 @@
-
+.bg-color{
+  background-color: rgb(108, 74, 74);
+}
+.content{
+  margin-top: 100px;
+  padding: 12px;
+  height: 3000px;
+}
+.navv{
+  display: flex;
+  justify-content: space-between;
+  justify-content: right;
+}
