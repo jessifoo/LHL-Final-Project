@@ -18,8 +18,8 @@ export default function NavBar(props) {
       <Navbar.Collapse>
 
       <Nav>
-        <Nav.Link href="#some"> Dashboard</Nav.Link>
-        <Nav.Link href=""> Add Notes</Nav.Link>
+        <Nav.Link href="/user"> Dashboard</Nav.Link>
+        <Nav.Link href="/note"> Add Notes</Nav.Link>
         <Nav.Link href=""> Favorites</Nav.Link>
         <NavDropdown title ="Classes"> 
         <DropdownItem href=""> Math</DropdownItem>
