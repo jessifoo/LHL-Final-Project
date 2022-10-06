@@ -32,7 +32,7 @@ export default function Notes(props) {
                 <button type="button" class="btn btn-outline-primary">Edit</button>
                 <button type="button" class="btn btn-outline-danger">Delete</button>
               </div>
-              <Card.Text >{note.body.substr(0,100) + "....."}</Card.Text>
+              <Card.Text >{note.body.substr(0,300) + "....."}</Card.Text>
             </Card.Body>
           </Card>
 
