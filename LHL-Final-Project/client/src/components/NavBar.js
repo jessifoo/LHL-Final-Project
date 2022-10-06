@@ -11,19 +11,19 @@ export default function NavBar(props) {
 
     <Navbar bg="color" variant ="dark" fixed="top" expand="lg">
       <Navbar.Brand>
-      <img src= "https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" hight="50"/>
+      <img src= "https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="50" hight="50"/>
       </Navbar.Brand>
       <Navbar.Toggle/>
       <Navbar.Collapse>
 
       <Nav
-        defaultActiveKey={activeLink}
-        onSelect={(selectedKey, e) => {
-          setActiveLink(selectedKey);
-        }}
+        // defaultActiveKey={activeLink}
+        // onSelect={(selectedKey, e) => {
+        //   setActiveLink(selectedKey);
+        // }}
       >
         <Nav.Link href="/dashboard" eventKey="dashboard"> Dashboard</Nav.Link>
-        <Nav.Link href="/note" eventKey="note"> Add Notes</Nav.Link>
+        <Nav.Link href="/addNotes" eventKey="note"> Add Notes</Nav.Link>
         <Nav.Link href=""> Favorites</Nav.Link>
         <NavDropdown title ="Classes"> 
         <DropdownItem href=""> Math</DropdownItem>

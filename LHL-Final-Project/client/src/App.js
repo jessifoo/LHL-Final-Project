@@ -1,7 +1,5 @@
 import './App.css';
 import React from 'react';
-import User from "./components/User";
-import Notes from "./components/Notes";
 import NavBar from './components/NavBar';
 import AddNote from './components/AddNote';
 import {Route, Routes} from "react-router-dom";
@@ -17,7 +15,9 @@ function App() {
         <Routes>
         {/* change to <Dashboard/> */}
           <Route path="/dashboard" element={<Dashboard/>} /> 
+          <Route path="/addNotes"  element={<AddNote/>} />
         </Routes>
+        
       </div>
     
     </div>
