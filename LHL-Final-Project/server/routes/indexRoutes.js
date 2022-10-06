@@ -15,9 +15,7 @@ router.get('/users', (req, res) => {
 });
 
 router.get('/users/:id', (req, res) => {
-  console.log("REQ.ID: ", req.params.id)
   users.getUserById(req.params.id).then(data => {
-    console.log("USER DATA: ", data)
     res.json({userData: data});
   })
 });
@@ -41,12 +39,11 @@ router.get('/ratings/:id', (req, res) => {
   })
 });
 
-// login route
+// login route, place for front in to post to
 router.post('/api/login', (req, res) => {
-  console.log("REQ: ", req.body)
   users.getUserByEmail(req.body.email)
   .then(data => {
-    console.log("USER: ", data)
+    // console.log("USER: ", data)
     if (req.body.password === data.password) {
       res.json({success: true})
     } else {
@@ -54,6 +51,13 @@ router.post('/api/login', (req, res) => {
     }
   })
 });
+
+// register route
+router.post('/api/register', (req, res) => {
+  console.log("REQ: ", req.body)
+  // users.addUser
+
+})
 
 
 
