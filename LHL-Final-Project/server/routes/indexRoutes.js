@@ -6,6 +6,8 @@ const users = require('../db/queries/users');
 const notes = require('../db/queries/notes');
 const ratings = require('../db/queries/ratings')
 
+
+
 router.get('/users', (req, res) => {
   users.getAllUsers().then(data => {
     res.json({users: data});
@@ -13,7 +15,9 @@ router.get('/users', (req, res) => {
 });
 
 router.get('/users/:id', (req, res) => {
+  console.log("REQ.ID: ", req.params.id)
   users.getUserById(req.params.id).then(data => {
+    console.log("USER DATA: ", data)
     res.json({userData: data});
   })
 });
@@ -37,5 +41,38 @@ router.get('/ratings/:id', (req, res) => {
   })
 });
 
+// login route
+router.post('/api/login', (req, res) => {
+  console.log("REQ: ", req.body)
+  users.getUserByEmail(req.body.email)
+  .then(data => {
+    console.log("USER: ", data)
+    if (req.body.password === data.password) {
+      res.json({success: true})
+    } else {
+      res.json({success: false})
+    }
+  })
+});
+
+
+
+
+
+// router.route("/login").get(async (req, res) => {
+//   if (req.session.user && req.session.user.email) {
+//     res.json({ loggedIn: true, username: req.session.user.username });
+//   } else {
+//     res.json({ logedIn: false });
+//   }
+// })
+
+// router.post(async (req, res) => {
+//   if (getUserByEmail.rowCount > 0) {
+//     const isSamePass = await bcrypt.compare(
+//       req.body.password,
+//     )
+//   }
+// })
   
 module.exports = router;
