@@ -13,10 +13,10 @@ const getUserById = id => {
 	})
 }
 
-const addUser = (username, email, password) => {
-  return db.query(`INSERT INTO users (username, email, password)
-  VALUES ($1, $2, $3)
-  RETURNING *;`, [username, email, password])
+const addUser = (user) => {
+  return db.query(`INSERT INTO users (firstName, lastName, email, password, phoneNumber)
+  VALUES ($1, $2, $3, $4, $5)
+  RETURNING *;`, [user.firstName, user.lastName, user.email, user.password, user.phoneNumber])
     .then(data => {
       return data.rows;
     });

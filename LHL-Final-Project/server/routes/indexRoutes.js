@@ -54,29 +54,19 @@ router.post('/api/login', (req, res) => {
 
 // register route
 router.post('/api/register', (req, res) => {
-  console.log("REQ: ", req.body)
-  // users.addUser
+  // console.log("REQ: ", req.body)
+  console.log("REQ BODY EMAIL: ", req.body.email)
+  if (users.getUserByEmail(req.body.email).length > 0) {
+    console.log("VERIFY")
+    return res.json({message: "Email already registered. Please sign in"})
+  } 
+  users.addUser(req.body)
+  .then(data => {
+    console.log("DATA: ", data)
+    console.log("USERS: ", users.getUserByEmail)
+      return res.json({success: true})
+  })
 
 })
-
-
-
-
-
-// router.route("/login").get(async (req, res) => {
-//   if (req.session.user && req.session.user.email) {
-//     res.json({ loggedIn: true, username: req.session.user.username });
-//   } else {
-//     res.json({ logedIn: false });
-//   }
-// })
-
-// router.post(async (req, res) => {
-//   if (getUserByEmail.rowCount > 0) {
-//     const isSamePass = await bcrypt.compare(
-//       req.body.password,
-//     )
-//   }
-// })
   
 module.exports = router;
