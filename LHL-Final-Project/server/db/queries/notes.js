@@ -12,5 +12,16 @@ const getNotesForUser = id => {
 		return data.rows;
 	})
 }
+// Query to add new notes
+const addNotes = ({title, body, user_id, class_id, semester_id }) => {
+	return db.query(`INSERT INTO notes (title, body, picture, publishDate, user_id, class_id, semester_id)
+	VALUES($1, $2, "", current_timestamp,$3, $4, $5)
+	RETURNING *;
+	`, [title,body,user_id, class_id, semester_id])
+	.then(data => {
+		return data;
+	})
+	
+	};
 
-module.exports = {getAllNotes, getNotesForUser}
+module.exports = {getAllNotes, getNotesForUser, addNotes}

@@ -5,10 +5,11 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 export default function AddNote (){
   const [noteData, setNoteData] = useState(undefined)
+  const [id, setId] = useState(3);  //if  a user is logged in, we will setId to the corresponding user id.
 
 
   useEffect(() => {
-    fetch(`/notes`).then(
+    fetch(`/notes/${id}`).then(
       res => res.json())
       .then(data => setNoteData(data))
   }, [])

@@ -31,11 +31,20 @@ router.get('/notes/:id', (req, res) => {
   })
 });
 
+
+
 router.get('/ratings/:id', (req, res) => {
   ratings.getRatingsForNote(req.params.id).then(data => {
     res.json({noteRating: data});
   })
 });
 
-  
+
+router.post('/notes', (req, res) => {
+  console.log("posting test")
+   notes.addNotes(req.body).then(data => {
+    res.json({note: data})
+   })
+});
+
 module.exports = router;

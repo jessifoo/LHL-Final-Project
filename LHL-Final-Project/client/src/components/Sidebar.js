@@ -10,7 +10,7 @@ export default function Sidebar({noteData}) {
         <button>Add</button>
       </div>
       <div className="app-sidebar-notes" >
-      {noteData ? (noteData.notes.map((note, i) => (
+      {noteData ? (noteData.userNotes.map((note, i) => (
         <div className="app-sidebar-note">
           <div className="sidebar-note-title">
             <strong>{note.title}</strong>
@@ -19,7 +19,7 @@ export default function Sidebar({noteData}) {
 
           <p>{note.body.substr(0,100) + "....."}</p>
 
-          <small className="note-meta">Last modified [date] {note.publishDate}</small>
+          <small className="note-meta">Last modified {note.publishdate}</small>
         </div>
       
     
