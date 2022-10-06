@@ -1,9 +1,12 @@
 
-#root {
+/* #root {
   background: linear-gradient(#75c9b7bd, #abd699b3)
-}
+} */
+.root{
+  background: linear-gradient(#75c9b7bd, #abd699b3)
 
-.bg-color{
+}
+ .bg-color{
   background-color: #16123f;
 }
 .content{
@@ -15,13 +18,13 @@
   display: flex;
   justify-content: space-between;
   justify-content: right;
-}
+} 
 
-.text-right {
+ .text-right {
   display:flex;
   justify-content: right;
   gap: 20px;
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
  
 }
 
@@ -36,5 +39,10 @@
 
 .nav-link.active {
   text-decoration: underline;
-}
+} 
+.main-div{
+  display: flex;
+  justify-content: space-around;
 
+}
+ 

@@ -20,8 +20,9 @@ export default function Notes(props) {
 
   return (
     <div>
+      <h1 text align= "center"> Your notes</h1>
       {noteData ? (noteData.notes.map((note, i) => (
-
+      
         <ul>
 
           <Card key={i} style={{ width: '80rem' }}>
@@ -31,6 +32,7 @@ export default function Notes(props) {
                 <button type="button" class="btn btn-outline-primary">Edit</button>
                 <button type="button" class="btn btn-outline-danger">Delete</button>
               </div>
+              <Card.Text >{note.body.substr(0,100) + "....."}</Card.Text>
             </Card.Body>
           </Card>
 
