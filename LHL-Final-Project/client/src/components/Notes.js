@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Notes.css'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { BsTrash } from 'react-icons/bs';
 
 export default function Notes(props) {
   const [noteData, setNoteData] = useState(undefined)
@@ -23,13 +24,13 @@ export default function Notes(props) {
       {noteData ? (noteData.notes.map((note, i) => (
 
         <ul>
-          <div className= "card-containter" >
+          <div className= "card-container" >
               <Card key={i} style={{ width: '80rem' }}>
               <Card.Body>
                 <Card.Title className="text-center">{note.title}</Card.Title>
                 <div  class=" text-right">
                   <button type="button" class="btn btn-outline-primary">Edit</button>
-                  <button type="button" class="btn btn-outline-danger">Delete</button>
+                  <button type="button" class="btn btn-outline-danger">Delete <BsTrash/></button>
                 </div>
               </Card.Body>
             </Card>
