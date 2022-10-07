@@ -46,7 +46,7 @@ router.post('/api/login', (req, res) => {
     if (req.body.password !== data.password) {
       return res.status(400).json({success: false})
     }
-    delete user.password
+    delete data.password
     res.json({success: true, user: data})
   })
 });
@@ -60,7 +60,7 @@ router.post('/api/register', (req, res) => {
   .then(data => {
       return res.json({success: true, user: data})
   })
+});
 
-})
   
 module.exports = router;
