@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 export default function Notes(props) {
   const [noteData, setNoteData] = useState(undefined)
-  const [id, setId] = useState(3);  //if  a user is logged in, we will setId to the corresponding user id.
+  const [id, setId] = useState(1);  //if  a user is logged in, we will setId to the corresponding user id.
 
   const [ratingData, setRatingData] = useState(undefined)
 

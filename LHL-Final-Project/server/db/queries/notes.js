@@ -7,21 +7,33 @@ const getAllNotes = () => {
 	})
 }
 
-const getNotesForUser = id => {
-	return db.query("SELECT * FROM notes WHERE user_id = $1;", [id]).then(data => {
+const getNotesForUser = userId => {
+	return db.query("SELECT * FROM notes WHERE user_id = $1;", [userId]).then(data => {
 		return data.rows;
 	})
 }
 // Query to add new notes
 const addNotes = ({title, body, user_id, class_id, semester_id }) => {
-	return db.query(`INSERT INTO notes (title, body, picture, publishDate, user_id, class_id, semester_id)
-	VALUES($1, $2, "", current_timestamp,$3, $4, $5)
+	return db.query(`INSERT INTO notes (id,title, body, picture, publishDate, user_id, class_id, semester_id)
+	VALUES(DEFAULT,$1, $2, '', current_timestamp,$3, $4, $5)
 	RETURNING *;
 	`, [title,body,user_id, class_id, semester_id])
 	.then(data => {
-		return data;
+		console.log("DATA:",data.rows)
+		return data.rows;
+	})
+	.catch(err => {
+	 console.log(err)
 	})
 	
-	};
+	}
 
-module.exports = {getAllNotes, getNotesForUser, addNotes}
+	const deleteNote = noteId => {
+		return db.query(`DELETE FROM notes WHERE id = $1`, [noteId])
+		.then(data =>{
+			return data.rows;
+		} )
+	}
+
+
+module.exports = {getAllNotes, getNotesForUser, addNotes, deleteNote}

@@ -42,9 +42,18 @@ router.get('/ratings/:id', (req, res) => {
 
 router.post('/notes', (req, res) => {
   console.log("posting test")
+  console.log(req.body)
    notes.addNotes(req.body).then(data => {
     res.json({note: data})
    })
+});
+
+router.post('/notes/delete/:id', (req, res) => {
+  console.log("deleting test")
+  console.log(req.params.id)
+  notes.deleteNote(req.params.id).then(data => {
+    res.json({deletedNote: data})
+  })
 });
 
 module.exports = router;

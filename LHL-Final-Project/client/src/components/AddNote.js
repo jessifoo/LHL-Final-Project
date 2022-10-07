@@ -5,7 +5,7 @@ import Main from "./Main";
 import Sidebar from "./Sidebar";
 export default function AddNote (){
   const [noteData, setNoteData] = useState(undefined)
-  const [id, setId] = useState(3);  //if  a user is logged in, we will setId to the corresponding user id.
+  const [id, setId] = useState(1);  //if  a user is logged in, we will setId to the corresponding user id.
 
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function AddNote (){
     <div className="main-div">
 
       <Sidebar noteData={noteData} />
-      <Main />
+      <Main id={id} noteData={noteData}/>
     </div>
       
       
