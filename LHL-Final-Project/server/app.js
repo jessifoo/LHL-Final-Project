@@ -3,6 +3,7 @@ const {ENVIROMENT, PORT} = process.env;
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cookieSession = require("cookie-session");
 
 // routes import
 const indexRoutes = require('./routes/indexRoutes');
@@ -15,6 +16,12 @@ const app = express();
 app.use(morgan(ENVIROMENT));
 app.use(bodyParser.json());
 const cors = require('cors') ;app.use(cors())
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['hello'],
+  maxAge: 24 * 60 * 60 * 1000 //24 hours
+}));
 
 
 app.use('/', indexRoutes)

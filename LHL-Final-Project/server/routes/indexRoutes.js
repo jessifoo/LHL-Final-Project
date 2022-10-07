@@ -43,11 +43,11 @@ router.get('/ratings/:id', (req, res) => {
 router.post('/api/login', (req, res) => {
   users.getUserByEmail(req.body.email)
   .then(data => {
-    if (req.body.password === data.password) {
-      res.json({success: true})
-    } else {
-      res.json({success: false})
+    if (req.body.password !== data.password) {
+      return res.status(400).json({success: false})
     }
+    delete user.password
+    res.json({success: true, user: data})
   })
 });
 
@@ -58,9 +58,7 @@ router.post('/api/register', (req, res) => {
   } 
   users.addUser(req.body)
   .then(data => {
-    console.log("DATA: ", data)
-    console.log("USERS: ", users.getUserByEmail)
-      return res.json({success: true})
+      return res.json({success: true, user: data})
   })
 
 })
