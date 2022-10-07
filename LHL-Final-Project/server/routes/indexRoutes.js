@@ -43,7 +43,6 @@ router.get('/ratings/:id', (req, res) => {
 router.post('/api/login', (req, res) => {
   users.getUserByEmail(req.body.email)
   .then(data => {
-    // console.log("USER: ", data)
     if (req.body.password === data.password) {
       res.json({success: true})
     } else {
@@ -54,10 +53,7 @@ router.post('/api/login', (req, res) => {
 
 // register route
 router.post('/api/register', (req, res) => {
-  // console.log("REQ: ", req.body)
-  console.log("REQ BODY EMAIL: ", req.body.email)
   if (users.getUserByEmail(req.body.email).length > 0) {
-    console.log("VERIFY")
     return res.json({message: "Email already registered. Please sign in"})
   } 
   users.addUser(req.body)
