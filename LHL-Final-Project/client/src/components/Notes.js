@@ -29,9 +29,9 @@ export default function Notes(props) {
               <Card.Body>
                 <Card.Title className="text-center">{note.title}</Card.Title>
                 <div  class=" text-right">
-                  <button type="button" class="btn btn-outline-primary">Edit</button>
-                  <button type="button" class="btn btn-outline-danger">Delete <BsTrash/></button>
-                </div>
+                  {/* <button type="button" class="btn btn-outline-primary">Edit</button> */}
+                  <button type="button" class="btn btn-outline-danger"><BsTrash size={20} /></button> </div>
+                
               </Card.Body>
             </Card>
           </div>
