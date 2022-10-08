@@ -11,7 +11,7 @@ export default function NavBar(props) {
 
     <Navbar bg="color" variant ="dark" fixed="top" expand="lg">
       <Navbar.Brand>
-      <img src= "https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" hight="50"/>
+      <img src= "https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" hight="50" object-fit="contain" border-radius="60" />
       </Navbar.Brand>
       <Navbar.Toggle/>
       <Navbar.Collapse>
