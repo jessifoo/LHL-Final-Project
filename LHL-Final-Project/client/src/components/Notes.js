@@ -27,10 +27,10 @@ const noteList = noteData.map((note, i) => (
     <Card border="dark" key={i} style={{ width: '80rem' }} href="/addNotes" >
       <Card.Body>
         <Card.Title className="text-center">{note.title}</Card.Title>
-        {/* <div  class=" text-right">
+        { <div  class=" text-right">
           <button type="button" class="btn btn-outline-primary">Edit</button>
           <button type="button" class="btn btn-outline-danger">Delete</button>
-        </div> */}
+        </div> }
         <Card.Text >{note.body.substr(0,300) + "....."}</Card.Text>
         <Card.Link href="/viewNote"><p text align="center"  decoration="none">View note</p></Card.Link>
         <button type="button" class="btn btn-outline-danger"><BsTrash size={20} /></button> 
