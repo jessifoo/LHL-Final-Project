@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 export default function User(props) {
 
   const [backendData, setBackendData] = useState(undefined)
-  const id = 3;
+  const id = 1;
   useEffect(() => {
     fetch(`/users/${id}`).then(
       res => res.json())

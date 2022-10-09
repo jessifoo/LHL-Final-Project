@@ -1,33 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useContext } from 'react';
+import { noteContext } from 'providers/NoteProvider';
 import './Notes.css'
 import Card from 'react-bootstrap/Card';
-export default function ViewNote() {
+import '../App.css';
 
-  return (
-    <div>
-    <h1 text align= "center"> Your notes</h1>
-    {noteData ? (noteData.notes.map((note, i) => (
+export default function ViewNote (props) {
+
+  const {allNotes} = useContext(noteContext);
+
+  const noteList = allNotes.filter((note) => note.id === 1)
+
+
+  const noteListed = noteList.map((note, i) => (
+      
+<ul>
     
-      <ul>
-
-        <Card border="dark" key={i} style={{ width: '80rem' }} href="/addNotes" >
+    
+        <Card border="dark" key={i} style={{ width: '70rem', height: '40rem'} } href="/addNotes" >
           <Card.Body>
             <Card.Title className="text-center">{note.title}</Card.Title>
-            {/* <div  class=" text-right">
+            <Card.Text >{note.body}</Card.Text>
+          </Card.Body>
+            <div class=" text-right">
               <button type="button" class="btn btn-outline-primary">Edit</button>
               <button type="button" class="btn btn-outline-danger">Delete</button>
-            </div> */}
-            <Card.Text >{note.body.substr(0,300) + "....."}</Card.Text>
-            <Card.Link href="/addNotes"><p text align="center"  decoration="none">View note</p></Card.Link>
-
-          </Card.Body>
+            </div>
         </Card>
-
-      </ul>
+        </ul>
     ))
-    ) : (
-      <p>Loading...</p>
-    )}
-  </div>
-  )
-}
+    
+
+    return (
+      <div align="center" className='div1'>
+        <h1 text align= "center"> </h1>
+        
+          {noteListed}
+        
+      </div>
+    );
+  }

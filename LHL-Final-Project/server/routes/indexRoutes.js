@@ -4,8 +4,8 @@
 const router = require('express').Router();
 const users = require('../db/queries/users');
 const notes = require('../db/queries/notes');
-const ratings = require('../db/queries/ratings')
-
+const ratings = require('../db/queries/ratings');
+const classes = require('../db/queries/classes');
 router.get('/users', (req, res) => {
   users.getAllUsers().then(data => {
     res.json({users: data});
@@ -32,6 +32,12 @@ router.get('/notes/:id', (req, res) => {
 });
 
 
+router.get('/classes', (req, res) => {
+  classes.getAllClasses().then(data => {
+    res.json({classes: data});
+  })
+});
+
 
 router.get('/ratings/:id', (req, res) => {
   ratings.getRatingsForNote(req.params.id).then(data => {
@@ -44,15 +50,15 @@ router.post('/notes', (req, res) => {
   console.log("posting test")
   console.log(req.body)
    notes.addNotes(req.body).then(data => {
-    res.json({note: data})
+    res.json(data)
    })
 });
 
 router.post('/notes/delete/:id', (req, res) => {
   console.log("deleting test")
-  console.log(req.params.id)
+  console.log(req.params)
   notes.deleteNote(req.params.id).then(data => {
-    res.json({deletedNote: data})
+    res.json({userNotes: data})
   })
 });
 
