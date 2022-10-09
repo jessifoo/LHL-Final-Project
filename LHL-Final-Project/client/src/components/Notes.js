@@ -63,31 +63,32 @@ const noteList = noteData.map((note, i) => (
         {noteList}
 </div>
 )
-    {/* <div onClick={() => alert("Hello from here")}>
-      {noteData ? (noteData.notes.map((note, i) => (
-        <ul>
-              HEAD
-          <div className= "card-container" >
-              <Card key={i} style={{ width: '80rem' }}>
-              <Card.Body>
-                <Card.Title className="text-center">{note.title}</Card.Title>
-                <div  class=" text-right">
-                  {/* <button type="button" class="btn btn-outline-primary">Edit</button> */}
-//                   <button type="button" class="btn btn-outline-danger"><BsTrash size={20} /></button> </div>
+
+//     { <div onClick={() => alert("Hello from here")}>
+//       {noteData ? (noteData.notes.map((note, i) => (
+//         <ul>
+//               HEAD
+//           <div className= "card-container" >
+//               <Card key={i} style={{ width: '80rem' }}>
+//               <Card.Body>
+//                 <Card.Title className="text-center">{note.title}</Card.Title>
+//                 <div  class=" text-right">
+//                   { <button type="button" class="btn btn-outline-primary">Edit</button> }
+//                    <button type="button" class="btn btn-outline-danger"><BsTrash size={20} /></button> </div>
                 
 //               </Card.Body>
 //             </Card>
-//           </div>
+//            </div>
 
     
-//         </ul>
+//           </ul>
 //       ))
 //       ) : (
 //         <p>Loading...</p>
 //       )}
 //     </div>
 //   );
-// } */}
+// } }
 
 
 
