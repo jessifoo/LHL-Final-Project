@@ -19,7 +19,7 @@ export default function User(props) {
 
       {backendData ? (backendData.userData.map((user) => (
         <Card key={user.id} style={{ width: '35rem' }}>
-          <Card.Img variant="top" src={user.profilepic} alt="Profile Pic" />
+          <Card.Img classname="profilePic" variant="top" src={user.profilepic} alt="Profile Pic" />
           <Card.Body>
             <Card.Title className="text-center">{user.firstname} {user.lastname}</Card.Title>
             <Card.Text className="text-center"> {user.phonenumber}  </Card.Text>

@@ -7,6 +7,9 @@ import AddNote from './components/AddNote';
 import {Route, Routes} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
+import "swiper/css/bundle";
+import "./components/landingPage.css";
+import LandingPage from "./components/LandingPage.js";
 
 function App() {
 
@@ -16,7 +19,8 @@ function App() {
       <div className='content'>
         <Routes>
         {/* change to <Dashboard/> */}
-          <Route path="/dashboard" element={<Dashboard/>} /> 
+          {/* <Route path="/dashboard" element={<Dashboard/>} />  */}
+          <Route path="/" element={<LandingPage/>} /> 
         </Routes>
       </div>
     
