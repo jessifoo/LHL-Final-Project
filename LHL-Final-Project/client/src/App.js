@@ -1,13 +1,15 @@
-import './App.css';
 import React from 'react';
 import User from "./components/User";
 import Notes from "./components/Notes";
 import NavBar from './components/NavBar';
-import AddNote from './components/AddNote';
 import {Route, Routes} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
-import Login from './components/Login';
+import Auth from './components/Auth';
+import Notify from './components/Notify';
+import AddNote from './components/AddNote';
+import './App.css';
+
 
 function App() {
 
@@ -18,7 +20,8 @@ function App() {
         <Routes>
         {/* change to <Dashboard/> */}
           <Route path="/dashboard" element={<Dashboard/>} /> 
-          <Route path="/login" element={<Login/>} /> 
+          <Route path="/auth" element={<Auth/>} /> 
+          <Route path="/notify" element={<Notify/>} /> 
         </Routes>
       </div>
     
