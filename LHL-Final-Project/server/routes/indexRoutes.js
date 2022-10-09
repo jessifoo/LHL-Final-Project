@@ -4,7 +4,9 @@
 const router = require('express').Router();
 const users = require('../db/queries/users');
 const notes = require('../db/queries/notes');
-const ratings = require('../db/queries/ratings')
+const ratings = require('../db/queries/ratings');
+const bcrypt = require("bcrypt")
+
 
 
 
