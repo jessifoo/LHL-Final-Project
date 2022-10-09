@@ -70,4 +70,28 @@ router.post('/notes/delete/:id', (req, res) => {
   })
 });
 
+// login route, place for front in to post to
+router.post('/api/login', (req, res) => {
+  users.getUserByEmail(req.body.email)
+  .then(data => {
+    if (req.body.password !== data.password) {
+      return res.status(400).json({success: false})
+    }
+    delete data.password
+    res.json({success: true, user: data})
+  })
+});
+
+// register route
+router.post('/api/register', (req, res) => {
+  if (users.getUserByEmail(req.body.email).length > 0) {
+    return res.json({message: "Email already registered. Please sign in"})
+  } 
+  users.addUser(req.body)
+  .then(data => {
+      return res.json({success: true, user: data})
+  })
+});
+
+  
 module.exports = router;
