@@ -23,6 +23,13 @@ app.get('/', (req, res) => {
 	res.json({greetings: 'hello world'});
 });
 
+// app.post('/notes', (req, res) => {
+//   console.log("posting")
+//   // notes.addNotes(req.body).then(data => {
+//     res.json({note: 'data'})
+//   // })
+// });
+
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
 
 module.exports = app;

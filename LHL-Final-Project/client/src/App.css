@@ -1,4 +1,11 @@
 
+<<<<<<< HEAD
+/* #root {
+  background: linear-gradient(#75c9b7bd, #abd699b3)
+} */
+.root{
+  background: linear-gradient(#75c9b7bd, #abd699b3)
+=======
 #root {
   background: linear-gradient(to bottom right, #75c9b7bd, #abd699b3)
 }
@@ -6,12 +13,14 @@
 .font-link{
   font-family: 'Inter Tight', sans-serif;
 }
+>>>>>>> main
 
-.bg-color{
-  background-color: #16123fe8;
+}
+ .bg-color{
+  background-color: #16123f;
 }
 .content{
-  margin-top: 46px;
+  margin-top: 70px;
   padding: 12px;
   height: 3000px;
 }
@@ -19,13 +28,13 @@
   display: flex;
   justify-content: space-between;
   justify-content: right;
-}
+} 
 
-.text-right {
+ .text-right {
   display:flex;
   justify-content: right;
   gap: 20px;
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
  
 }
 
@@ -40,8 +49,24 @@
 
 .nav-link.active {
   text-decoration: underline;
-}
+} 
+.main-div{
+  display: flex;
+  justify-content: space-around;
 
+}
+ 
+.div1{
+  margin-top: 100px;
+}
+.fixed-content {
+  width: 100%;
+  top: 0;
+  bottom:0;
+  position:fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
 
 
 

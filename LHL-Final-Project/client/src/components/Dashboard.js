@@ -30,6 +30,7 @@ function Dashboard() {
 ////////////////////////////////
 
   return (
+    <div align="center">
     <Container fluid>
       <Stack direction="horizontal" gap={3}>
       <Row>
@@ -44,6 +45,7 @@ function Dashboard() {
       </Row>
     </Stack>
     </Container>
+    </div>
   );
 }
 
