@@ -1,68 +1,3 @@
-
-
-#root {
-  background: linear-gradient(to bottom right, #75c9b7bd, #abd699b3)
-}
-
-.font-link{
-  font-family: 'Inter Tight', sans-serif;
-}
-
-
- .bg-color{
-  background-color: #16123f;
-}
-.content{
-  margin-top: 70px;
-  padding: 12px;
-  height: 3000px;
-}
-.navv{
-  display: flex;
-  justify-content: space-between;
-  justify-content: right;
-} 
-
- .text-right {
-  display:flex;
-  justify-content: right;
-  gap: 20px;
-  /* box-sizing: content-box; */
- 
-}
-
-.container-fluid {
-  margin-left:auto;
-  margin-top: 5%;
-}
-
-.card-body {
-  background-color: #eeecd5a6;
-}
-
-.nav-link.active {
-  text-decoration: underline;
-} 
-.main-div{
-  display: flex;
-  justify-content: space-around;
-
-}
- 
-.div1{
-  margin-top: 100px;
-}
-.fixed-content {
-  width: 100%;
-  top: 0;
-  bottom:0;
-  position:fixed;
-  overflow-y:scroll;
-  overflow-x:hidden;
-}
-
-
-
 .Auth-form-container {
   display: flex;
   justify-content: center;
@@ -121,4 +56,3 @@ label {
   font-weight: 600;
   color: #16123fe8;
 }
-
