@@ -4,7 +4,11 @@
 const router = require('express').Router();
 const users = require('../db/queries/users');
 const notes = require('../db/queries/notes');
-const ratings = require('../db/queries/ratings')
+const ratings = require('../db/queries/ratings');
+const bcrypt = require("bcrypt")
+
+
+
 
 router.get('/users', (req, res) => {
   users.getAllUsers().then(data => {
@@ -34,6 +38,29 @@ router.get('/notes/:id', (req, res) => {
 router.get('/ratings/:id', (req, res) => {
   ratings.getRatingsForNote(req.params.id).then(data => {
     res.json({noteRating: data});
+  })
+});
+
+// login route, place for front in to post to
+router.post('/api/login', (req, res) => {
+  users.getUserByEmail(req.body.email)
+  .then(data => {
+    if (req.body.password !== data.password) {
+      return res.status(400).json({success: false})
+    }
+    delete data.password
+    res.json({success: true, user: data})
+  })
+});
+
+// register route
+router.post('/api/register', (req, res) => {
+  if (users.getUserByEmail(req.body.email).length > 0) {
+    return res.json({message: "Email already registered. Please sign in"})
+  } 
+  users.addUser(req.body)
+  .then(data => {
+      return res.json({success: true, user: data})
   })
 });
 

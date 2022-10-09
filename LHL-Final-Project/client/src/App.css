@@ -1,6 +1,10 @@
 
 #root {
-  background: linear-gradient(#75c9b7bd, #abd699b3)
+  background: linear-gradient(to bottom right, #75c9b7bd, #abd699b3)
+}
+
+.font-link{
+  font-family: 'Inter Tight', sans-serif;
 }
 
 .bg-color{
@@ -36,5 +40,67 @@
 
 .nav-link.active {
   text-decoration: underline;
+}
+
+
+
+
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 700px;
+  box-shadow: rgb(0 0 0 / 16%) 35px 35px 10px;
+  padding-top: 30px;
+  padding-bottom: 0;
+  border-radius: 8px;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/006/786/633/small_2x/soft-gradation-abstract-in-pastel-colorful-gradient-style-gradient-background-blurred-gradient-texture-decorative-elements-green-wallpaper-free-vector.jpg");
+}
+
+.Auth-form-content-head {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
+  text-align: left;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: #16123fe8;
+  font-weight: 800;
+}
+
+.Auth-form-content-foot {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  color: #16123fe8;
+  font-weight: 800;
+  background-color: white;
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-bottom: 1em;
+}
+
+.Auth-form-body {
+  text-align: left;
+  margin-bottom: 4em;
+}
+
+.Auth-form-head {
+  width: 100%
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #16123fe8;
 }
 
