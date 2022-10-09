@@ -1,15 +1,18 @@
-import './App.css';
 import React from 'react';
 import User from "./components/User";
 import Notes from "./components/Notes";
 import NavBar from './components/NavBar';
-import AddNote from './components/AddNote';
 import {Route, Routes} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
 import "swiper/css/bundle";
 import "./components/landingPage.css";
 import LandingPage from "./components/LandingPage.js";
+import Auth from './components/Auth';
+import Notify from './components/Notify';
+import AddNote from './components/AddNote';
+import './App.css';
+
 
 function App() {
 
@@ -21,6 +24,9 @@ function App() {
         {/* change to <Dashboard/> */}
           {/* <Route path="/dashboard" element={<Dashboard/>} />  */}
           <Route path="/" element={<LandingPage/>} /> 
+          <Route path="/dashboard" element={<Dashboard/>} /> 
+          <Route path="/auth" element={<Auth/>} /> 
+          <Route path="/notify" element={<Notify/>} /> 
         </Routes>
       </div>
     

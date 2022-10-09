@@ -5,15 +5,15 @@ import Card from 'react-bootstrap/Card';
 export default function User(props) {
 
   const [backendData, setBackendData] = useState(undefined)
-  const id = 3;
+  // use localStorage to collect user data to auto populate
+  const profilePic = JSON.parse(localStorage.getItem('notifyUser')).profilepic
+  const id = JSON.parse(localStorage.getItem('notifyUser')).id
   useEffect(() => {
     fetch(`/users/${id}`).then(
       res => res.json())
-      .then(data => setBackendData(data))
-  }, [])
-
-
-
+      .then(data => {setBackendData(data)})
+    }, [])
+    
   return (
     <div>
 
