@@ -4,6 +4,9 @@ import { noteContext } from 'providers/NoteProvider';
 import './Notes.css'
 import Card from 'react-bootstrap/Card';
 import '../App.css';
+import './ViewNote.css';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 
 // export default function HistoryNotes() {
@@ -29,7 +32,7 @@ export default function ViewHistoryNotes() {
  <ul>
     
     
-        <Card border="dark" key={i} style={{ width: '80rem' }} href="/addNotes" >
+        <Card border="dark" key={i} style={{ width: '30rem' , height: '30rem'}} href="/addNotes" >
           <Card.Body>
             <Card.Title className="text-center">{note.title}</Card.Title>
             {/* <div  class=" text-right">
@@ -41,16 +44,17 @@ export default function ViewHistoryNotes() {
     
           </Card.Body>
         </Card>
+       
     </ul>
     ))
     
 
     return (
-      <div>
-        <h1 text align= "center"> History notes</h1>
-        
-          {noteListed}
-        
+      <div class="row">
+        {noteListed}
+      {/* <div class="column">
+        <div class="card">{noteListed}</div>
+      </div> */}
       </div>
     );
   }

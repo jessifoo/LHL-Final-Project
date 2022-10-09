@@ -6,6 +6,9 @@ const users = require('../db/queries/users');
 const notes = require('../db/queries/notes');
 const ratings = require('../db/queries/ratings');
 const classes = require('../db/queries/classes');
+const favorites = require('../db/queries/favorites')
+
+
 router.get('/users', (req, res) => {
   users.getAllUsers().then(data => {
     res.json({users: data});
@@ -45,6 +48,11 @@ router.get('/ratings/:id', (req, res) => {
   })
 });
 
+router.get('/favorites', (req, res) => {
+  favorites.getFavoritedNotes().then(data => {
+    res.json({favorites: data})
+  })
+})
 
 router.post('/notes', (req, res) => {
   console.log("posting test")

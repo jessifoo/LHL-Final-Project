@@ -46,7 +46,7 @@ export default function ViewLiteratureNotes() {
     
 
     return (
-      <div>
+      <div align="center">
         <h1 text align= "center"> Literature notes</h1>
       
           {noteListed}

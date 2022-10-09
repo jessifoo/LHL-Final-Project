@@ -20,7 +20,7 @@ export default function ViewNote (props) {
         <Card border="dark" key={i} style={{ width: '70rem', height: '40rem'} } href="/addNotes" >
           <Card.Body>
             <Card.Title className="text-center">{note.title}</Card.Title>
-            <Card.Text >{note.body}</Card.Text>
+            <Card.Text  style={{fontsize:80}}>{note.body}</Card.Text>
           </Card.Body>
             <div class=" text-right">
               <button type="button" class="btn btn-outline-primary">Edit</button>

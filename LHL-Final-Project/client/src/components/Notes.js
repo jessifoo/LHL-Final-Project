@@ -39,9 +39,9 @@ const noteList = noteData.map((note, i) => (
   return (
     <div>
       <h1 text align= "center"> Your notes</h1>
-      <ul>
+      
         {noteList}
-      </ul>
+      
     </div>
   );
 }

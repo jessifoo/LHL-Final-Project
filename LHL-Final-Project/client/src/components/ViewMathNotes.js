@@ -46,7 +46,7 @@ export default function ViewMathNotes() {
     
 
     return (
-      <div>
+      <div align="center">
         <h1 text align= "center"> Math notes</h1>
         
           {noteListed}

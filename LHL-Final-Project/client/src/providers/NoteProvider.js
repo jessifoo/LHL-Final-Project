@@ -11,11 +11,11 @@ export default function NoteProvider(props) {
   const [allNotes, setAllNotes] = useState([]);
   const [ title, setTitle] = useState("")
   const [text, setText] = useState("")
-
+  const [name, setName] = useState("")
   // Here is our Shared State Object
   const [courseName, setCourseName] = useState(""); //course to add note to
 //  const [courses, setCourses] = useState([])
-  //const [classId, setClassId] = useState(1)
+  const [classId, setClassId] = useState()
   const userId = 1; // this has to come from auth provider-useContext
 
   useEffect(() => {
@@ -47,19 +47,21 @@ export default function NoteProvider(props) {
 
     let realId;
     console.log(name)
-    if(name === "history") {
+    if(name == "History") {
       realId = 1;
     }
-    if(name === "math") {
+    if(name == "Math") {
       realId = 2;
     }
-    else {realId = 3;}
-    console.log(realId)
+   if (name == "Literature") {
+     realId = 3;
+   }
+    console.log("REALID:",realId)
     const note = {
       title: title,
       body: text,
       user_id: userId,
-      class_id: classId,
+      class_id: realId,
       semester_id: 1
     }
     const body = JSON.stringify(note)
@@ -90,6 +92,7 @@ export default function NoteProvider(props) {
       .then(data => {
         //console.log("data:", data)
         setNoteData([noteData.filter((notes)=> notes.id !== noteId)]) // remove obj from array 
+        window.location.reload()
       })
     // reset()
 
@@ -113,11 +116,14 @@ export default function NoteProvider(props) {
   //  console.log(name)
   //   console.log(classId)
   // }
-
+function showName() {
+  console.log(name)
+}
 
 
   // This list can get long with a lot of functions.  Reducer may be a better choice
-  const providerData = { noteData, title, text, setTitle, setText, allNotes, setAllNotes,  addNote, deleteNote,  setCourseName};
+  const providerData = { noteData, classId, title, text, name, allNotes, showName,
+     setName, setTitle, setText, setAllNotes,  addNote, deleteNote,  setCourseName, setClassId};
 
   // We can now use this as a component to wrap anything 
   // that needs our state

@@ -14,7 +14,7 @@ import ViewNote from './components/ViewNote';
 function App() {
 const id = 1;
   return (
-    <div>
+    <div className='fixed-content'>
       <NavBar />
       <div className='content'>
         <NoteProvider>
