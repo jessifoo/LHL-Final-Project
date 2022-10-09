@@ -1,6 +1,10 @@
 
 #root {
-  background: linear-gradient(#75c9b7bd, #abd699b3)
+  background: linear-gradient(to bottom right, #75c9b7bd, #abd699b3)
+}
+
+.font-link{
+  font-family: 'Inter Tight', sans-serif;
 }
 
 .bg-color{
@@ -37,6 +41,9 @@
 .nav-link.active {
   text-decoration: underline;
 }
+
+
+
 
 .Auth-form-container {
   display: flex;
