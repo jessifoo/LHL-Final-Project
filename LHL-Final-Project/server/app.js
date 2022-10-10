@@ -1,5 +1,5 @@
-require('dotenv').config()
-const {ENVIROMENT, PORT} = process.env;
+require('dotenv').config();
+const {ENVIRONMENT: ENVIRONMENT, PORT} = process.env;
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -12,15 +12,15 @@ const app = express();
 
 
 // middleware setup
-app.use(morgan(ENVIROMENT));
+app.use(morgan(ENVIRONMENT));
 app.use(bodyParser.json());
-const cors = require('cors') ;app.use(cors())
+const cors = require('cors') ;app.use(cors());
 
-app.use('/', indexRoutes)
+app.use('/', indexRoutes);
 
 
 app.get('/', (req, res) => {
-	res.json({greetings: 'hello world'});
+    res.json({greetings: 'hello world'});
 });
 
 // app.post('/notes', (req, res) => {

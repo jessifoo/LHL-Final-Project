@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import User from "./User";
-import Notes from "./Notes";
+import User from './User';
+import Notes from './Notes';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,42 +12,42 @@ import '../App.css';
 
 function Dashboard() {
   
-  ////// login authentication ////////
-  const navigate = useNavigate()
-  const [user, setUser] = useState({})
+    ////// login authentication ////////
+    const navigate = useNavigate();
+    const [user, setUser] = useState({});
 
-  function checkLogin() {
-    const userObject = localStorage.getItem('notifyUser')
+    function checkLogin() {
+        const userObject = localStorage.getItem('notifyUser');
     
-    if (!userObject) {
-      navigate("/auth")
+        if (!userObject) {
+            navigate('/auth');
+        }
+        setUser(JSON.parse(userObject));
     }
-    setUser(JSON.parse(userObject))
-  }
 
-  useEffect(() => {
-    checkLogin()
-  }, [])
-////////////////////////////////
+    useEffect(() => {
+        checkLogin();
+    }, []);
+    ////////////////////////////////
 
-  return (
-    <div align="center">
-    <Container fluid>
-      <Stack direction="horizontal" gap={3}>
-      <Row>
-        <Col>
-          <User  />
-        </Col>
-      <Col>
-        <Stack gap={3}>
-          <Notes />
-        </Stack>
-      </Col>
-      </Row>
-    </Stack>
-    </Container>
-    </div>
-  );
+    return (
+        <div className="text-center">
+            <Container fluid>
+                <Stack direction="horizontal" gap={3}>
+                    <Row>
+                        <Col>
+                            <User  />
+                        </Col>
+                        <Col>
+                            <Stack gap={3}>
+                                <Notes />
+                            </Stack>
+                        </Col>
+                    </Row>
+                </Stack>
+            </Container>
+        </div>
+    );
 }
 
 export default Dashboard;

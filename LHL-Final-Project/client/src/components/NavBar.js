@@ -1,169 +1,168 @@
-import React, { useEffect, useState } from "react";
-import 'bootstrap/dist/css/bootstrap.css'
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavBar(props) {
 
-  const [classData, setClassData] = useState(undefined)
-  const [activeLink, setActiveLink] = React.useState('dashboard');
+    const [classData, setClassData] = useState(undefined);
+    const [activeLink, setActiveLink] = React.useState('dashboard');
 
-  useEffect(() => {
-    fetch("/classes").then(
-      res => res.json())
-      .then(data => setClassData(data))
-    }, [])
-//   const arr = [];
-//   const arr1 = [];
-//   console.log(classData)
-//   const x = classData.classes;
-//   console.log(x)
-//   for (let i of x) {
-//     arr.push(i.name)
-//   }
-// console.log(arr)
-//   for (let i of arr) {
-//     return arr1.push((
-//       <DropdownItem href=""> {i}</DropdownItem>
-//       ))
-//   }
-
-
-  return (
+    useEffect(() => {
+        fetch('/classes').then(
+            res => res.json())
+            .then(data => setClassData(data));
+    }, []);
+    //   const arr = [];
+    //   const arr1 = [];
+    //   console.log(classData)
+    //   const x = classData.classes;
+    //   console.log(x)
+    //   for (let i of x) {
+    //     arr.push(i.name)
+    //   }
+    // console.log(arr)
+    //   for (let i of arr) {
+    //     return arr1.push((
+    //       <DropdownItem href=""> {i}</DropdownItem>
+    //       ))
+    //   }
 
 
-    <Navbar bg="color" variant="dark" fixed="top" expand="lg">
-      <Navbar.Brand>
-        <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="50" hight="50" />
-      </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse>
+    // return (
+    //
+    //
+    //     <Navbar bg="color" variant="dark" fixed="top" expand="lg">
+    //         <Navbar.Brand>
+    //             <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="50" hight="50" />
+    //         </Navbar.Brand>
+    //         <Navbar.Toggle />
+    //         <Navbar.Collapse>
+    //
+    //             <Nav
+    //                 // defaultActiveKey={activeLink}
+    //                 // onSelect={(selectedKey, e) => {
+    //                 //   setActiveLink(selectedKey);
+    //                 // }}
+    //             >
+    //                 <Nav.Link href="/dashboard" eventKey="dashboard"> Dashboard</Nav.Link>
+    //                 <Nav.Link href="/addNotes" eventKey="note"> Add Notes</Nav.Link>
+    //                 <Nav.Link href=""> Favorites</Nav.Link>
+    //                 <NavDropdown title="Classes">
+    //
+    //                     <DropdownItem href="/historyNotes"> History</DropdownItem>
+    //                     <DropdownItem href="/mathNotes"> Math</DropdownItem>
+    //                     <DropdownItem href="/literatureNotes"> Literature</DropdownItem>
+    //
+    //
+    //                     {/* {arr1} */}
+    //                 </NavDropdown>
+    //                 <Nav.Link> Logout</Nav.Link>
+    //             </Nav>
+    //         </Navbar.Collapse>
+    //     </Navbar>
+    //
+    // );
 
-        <Nav
-        // defaultActiveKey={activeLink}
-        // onSelect={(selectedKey, e) => {
-        //   setActiveLink(selectedKey);
-        // }}
-        >
-          <Nav.Link href="/dashboard" eventKey="dashboard"> Dashboard</Nav.Link>
-          <Nav.Link href="/addNotes" eventKey="note"> Add Notes</Nav.Link>
-          <Nav.Link href=""> Favorites</Nav.Link>
-          <NavDropdown title="Classes">
+    // toggle login/register button with logout
+    const navigate = useNavigate();
+    const userObject = localStorage.getItem('notifyUser');
+    console.log('USEROBJECT: ', userObject);
+    const handleOnClick = (e) => {
+        e.preventDefault();
+        localStorage.removeItem('notifyUser');
+        navigate('/auth');
+    };
 
-          <DropdownItem href="/historyNotes"> History</DropdownItem>
-          <DropdownItem href="/mathNotes"> Math</DropdownItem>
-          <DropdownItem href="/literatureNotes"> Literature</DropdownItem>
+    if (userObject) {
 
-
-            {/* {arr1} */}
-          </NavDropdown>
-          <Nav.Link> Logout</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-
-  )
-
-  // toggle login/register button with logout
-  const navigate = useNavigate()
-  const userObject = localStorage.getItem('notifyUser')
-  console.log("USEROBJECT: ", userObject)
-  const handleOnClick = (e) => {
-    e.preventDefault()
-    localStorage.removeItem('notifyUser')
-    navigate("/auth")
-  }
-
-  if (userObject) {
-
-    return (
+        return (
   
   
-      <Navbar bg="color" variant="dark" fixed="top" expand="lg">
-        <Navbar.Brand>
-          <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" hight="50" alt="Brand Logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
+            <Navbar bg="color" variant="dark" fixed="top" expand="lg">
+                <Navbar.Brand>
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" height="50" alt="Brand Logo" />
+                </Navbar.Brand>
+                <Navbar.Toggle />
+                <Navbar.Collapse>
   
-          <Nav
-            defaultActiveKey={activeLink}
-            onSelect={(selectedKey, e) => {
-              setActiveLink(selectedKey);
-            }}
-          >
-            <Nav.Link href="/dashboard" eventKey="dashboard"> Dashboard</Nav.Link>
-            <Nav.Link href="/note" eventKey="note"> Add Notes</Nav.Link>
-            <Nav.Link href=""> Favorites</Nav.Link>
-            <NavDropdown title="Classes">
-              <DropdownItem href=""> Math</DropdownItem>
-              <DropdownItem href=""> History</DropdownItem>
-              <DropdownItem href=""> Programing</DropdownItem>
-            </NavDropdown>
-              <Nav.Link href="/auth" eventKey="auth" onClick={handleOnClick}> Logout</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+                    <Nav
+                        defaultActiveKey={activeLink}
+                        onSelect={(selectedKey, e) => {
+                            setActiveLink(selectedKey);
+                        }}
+                    >
+                        <Nav.Link href="/dashboard" eventKey="dashboard"> Dashboard</Nav.Link>
+                        <Nav.Link href="/addNotes" eventKey="note"> Add Notes</Nav.Link>
+                        <Nav.Link href=""> Favorites</Nav.Link>
+                        <NavDropdown title="Classes">
+                            <DropdownItem href="/historyNotes"> History</DropdownItem>
+                            <DropdownItem href="/mathNotes"> Math</DropdownItem>
+                            <DropdownItem href="/literatureNotes"> Literature</DropdownItem>
+                        </NavDropdown>
+                        <Nav.Link href="/auth" eventKey="auth" onClick={handleOnClick}> Logout</Nav.Link>
+                        {userObject ? (
+                            <Nav.Link href="/auth" eventKey="auth" onClick={handleOnClick}> Logout</Nav.Link>
+                        ) : (
+                            <Nav.Link href="/auth" eventKey="auth"> Login/Register</Nav.Link>
+                        )}
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
   
-    )
-  } else {
-    return (
-      <Navbar bg="color" variant="dark" fixed="top" expand="lg">
-        <Navbar.Brand>
-          <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" hight="50" alt="Brand Logo"/>
-        </Navbar.Brand>
-        <Navbar.Brand>Notify</Navbar.Brand>
-      </Navbar>
+        );
+    } else {
+        return (
+            <Navbar bg="color" variant="dark" fixed="top" expand="lg">
+                <Navbar.Brand>
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" height="50" alt="Brand Logo"/>
+                </Navbar.Brand>
+                <Navbar.Brand>Notify</Navbar.Brand>
+            </Navbar>
       
-    )
-  }
+        );
+    }
   
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  // return (
+    // return (
 
 
-  //   <Navbar bg="color" variant="dark" fixed="top" expand="lg">
-  //     <Navbar.Brand>
-  //       <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" hight="50" />
-  //     </Navbar.Brand>
-  //     <Navbar.Toggle />
-  //     <Navbar.Collapse>
+    //   <Navbar bg="color" variant="dark" fixed="top" expand="lg">
+    //     <Navbar.Brand>
+    //       <img src="https://cdn.vectorstock.com/i/1000x1000/45/29/cute-dog-flat-logo-icon-vector-32724529.webp" width="100" hight="50" />
+    //     </Navbar.Brand>
+    //     <Navbar.Toggle />
+    //     <Navbar.Collapse>
 
-  //       <Nav
-  //         defaultActiveKey={activeLink}
-  //         onSelect={(selectedKey, e) => {
-  //           setActiveLink(selectedKey);
-  //         }}
-  //       >
-  //         <Nav.Link href="/dashboard" eventKey="dashboard"> Dashboard</Nav.Link>
-  //         <Nav.Link href="/note" eventKey="note"> Add Notes</Nav.Link>
-  //         <Nav.Link href=""> Favorites</Nav.Link>
-  //         <NavDropdown title="Classes">
-  //           <DropdownItem href=""> Math</DropdownItem>
-  //           <DropdownItem href=""> History</DropdownItem>
-  //           <DropdownItem href=""> Programing</DropdownItem>
-  //         </NavDropdown>
-  //         {userObject ? (
-  //           <Nav.Link href="/auth" eventKey="auth" onClick={handleOnClick}> Logout</Nav.Link>
+    //       <Nav
+    //         defaultActiveKey={activeLink}
+    //         onSelect={(selectedKey, e) => {
+    //           setActiveLink(selectedKey);
+    //         }}
+    //       >
+    //         <Nav.Link href="/dashboard" eventKey="dashboard"> Dashboard</Nav.Link>
+    //         <Nav.Link href="/note" eventKey="note"> Add Notes</Nav.Link>
+    //         <Nav.Link href=""> Favorites</Nav.Link>
+    //         <NavDropdown title="Classes">
+    //           <DropdownItem href=""> Math</DropdownItem>
+    //           <DropdownItem href=""> History</DropdownItem>
+    //           <DropdownItem href=""> Programing</DropdownItem>
+    //         </NavDropdown>
+    //         {userObject ? (
+    //           <Nav.Link href="/auth" eventKey="auth" onClick={handleOnClick}> Logout</Nav.Link>
 
-  //         ) : (
-  //           <Nav.Link href="/auth" eventKey="auth">Login/Register</Nav.Link>
-  //         )}
-  //       </Nav>
-  //     </Navbar.Collapse>
-  //   </Navbar>
+    //         ) : (
+    //           <Nav.Link href="/auth" eventKey="auth">Login/Register</Nav.Link>
+    //         )}
+    //       </Nav>
+    //     </Navbar.Collapse>
+    //   </Navbar>
 
-  // )
+    // )
 
 
 }
